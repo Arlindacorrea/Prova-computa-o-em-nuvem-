@@ -1,0 +1,58 @@
+> <!DOCTYPE html>
+> <html lang="pt-BR">
+> <head>
+> <meta charset="UTF-8">
+> <title>Treinamento</title>
+> </head>  
+> <body>
+> <h1>Treinamento ativo</h1>
+> </body>
+> </html>
+> EOF
+root@ubuntu:~$ docker cp index.html treinamento:/usr/share/nginx/html/index.html
+Successfully copied 2.05kB to treinamento:/usr/share/nginx/html/index.html
+
+#Prova 1 computação em Nuvem
+
+Nome: Arlinda Correa
+RA: d055163d483c5e081641
+
+## Oque eu fiz
+
+## Executei uma página web em um contêiner Docker chamado treinamento.
+Usei a imagem nginx:alpine e a porta 8083 do ambiente.
+
+root@ubuntu:~$ docker run -d --name treinamento -p 8083:80 nginx:alpine
+Unable to find image 'nginx:alpine' locally
+alpine: Pulling from library/nginx
+e2de96513ba9: Pull complete 
+d9aae54b5831: Pull complete 
+6c53d0b2a666: Pull complete 
+745dfb2690dd: Pull complete 
+9a9a644fdd6a: Pull complete 
+64c8194480fe: Pull complete 
+e76228b47809: Pull complete 
+e72112c14215: Pull complete 
+Digest: sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2
+Status: Downloaded newer image for nginx:alpine
+c68d2aeb2db8a6d52fe20988bb9bce86350e4ceff40440f7b4ab7b96419c45cf
+
+## verificação do conteiner 
+
+cole aqui  a saida do docker ps
+root@ubuntu:~$ docker cp index.html treinamento:/usr/share/nginx/html/index.html
+Successfully copied 2.05kB to treinamento:/usr/share/nginx/html/index.html
+
+## teste da pagina
+ curl http://localhost:8083
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<title>Treinamento</title>
+</head>
+<body>
+<h1>Treinamento ativo</h1>
+</body>
+</html>
